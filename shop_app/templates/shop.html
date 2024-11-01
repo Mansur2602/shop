@@ -1,0 +1,19 @@
+<h1>Все Заказы:</h1>
+{% for customer in customers_all %}
+    Имя: {{ customer.name }} <br>
+    Заказы: <br> 
+    {% for order in customer.orders.all %}
+        {{ order.product_name }} - {{ order.price }} <br>
+    {% endfor %}
+   
+    Общая сумма заказов: {{ customer.total_sum }} <br> 
+    <hr>
+{% endfor %}
+ 
+<h1>Общая сумма всех заказов:</h1>
+{{ sum }}
+ 
+<h1>Общее количество заказов:</h1>
+{{ count }}
+
+
